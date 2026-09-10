@@ -138,3 +138,39 @@ TO 'cliente'@'localhost';
 SHOW GRANTS FOR 'admin'@'localhost';
 SHOW GRANTS FOR 'funcionario'@'localhost';
 SHOW GRANTS FOR 'cliente'@'localhost';
+
+-- Insert e Select --
+INSERT INTO clientes (nome, email, senha, telefone) 
+VALUES ('João Silva', 'joao@email.com', 'senha_criptografada_123', '(11) 98765-4321');
+
+SELECT * FROM clientes;
+
+INSERT INTO categorias (nome, descricao) 
+VALUES ('Eletrônicos', 'Produtos de tecnologia e informática');
+
+SELECT * FROM categorias;
+
+INSERT INTO produtos (id_categoria, nome, descricao, preco, estoque) 
+VALUES (1, 'Smartphone XYZ', 'Celular com 128GB de armazenamento', 1500.00, 10);
+
+SELECT * FROM produtos;
+
+INSERT INTO enderecos (id_cliente, rua, numero, bairro, cidade, estado, cep) 
+VALUES (1, 'Rua das Flores', '123', 'Centro', 'São Paulo', 'SP', '01001-000');
+
+SELECT * FROM enderecos;
+
+INSERT INTO pedidos (id_cliente, status, valor_total) 
+VALUES (1, 'PENDENTE', 1500.00);
+
+SELECT * FROM pedidos;
+
+INSERT INTO itens_pedido (id_pedido, id_produto, quantidade, preco_unitario) 
+VALUES (1, 1, 1, 1500.00);
+
+SELECT * FROM itens_pedido;
+
+INSERT INTO pagamentos (id_pedido, metodo, status, valor) 
+VALUES (1, 'PIX', 'APROVADO', 1500.00);
+
+SELECT * FROM pagamentos;
